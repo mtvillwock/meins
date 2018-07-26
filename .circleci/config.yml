@@ -3,22 +3,19 @@ jobs:
   build:
     working_directory: ~/meo
     docker:
-      - image: circleci/clojure:lein-2.7.1 
+      - image: circleci/clojure:lein-2.8.1-node
     environment:
       LEIN_ROOT: nbd
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout
-      - restore_cache: # restores saved cache if checksum hasn't changed since the last run
-          key: meo-{{ checksum "project.clj" }}
       - run: lein deps
-      - save_cache: # generate and store cache in the .m2 directory using a key template
-          paths:
-            - ~/.m2
-          key: meo-{{ checksum "project.clj" }}
-      - run: lein do test, uberjar
-      - store_artifacts: # upload test results for display in Test Summary
-          path: target/uberjar/meo.jar
-
-          destination: uberjar
-      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
+      - run: lein test
+      - run: lein cljs-main
+      - run: lein cljs-renderer
+      - run: lein cljs-updater
+      - run: lein sass
+      - run: lein uberjar
+      - store_artifacts:
+          path: test2junit/html/
+          destination: reports

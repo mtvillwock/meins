@@ -104,6 +104,8 @@
             "cljs-renderer-dev" ["with-profile" "cljs" "cljsbuild" "auto" "renderer-dev"]
             "cljs-updater-dev"  ["with-profile" "cljs" "cljsbuild" "auto" "updater"]
 
+            "sass"              ["sass4clj" "once"]
+
             "dist"              ["do"
                                  ["clean"]
                                  ["test"]
