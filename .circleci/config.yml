@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: lein deps
       - run: lein test
+      - run: npm install
       - run: lein cljs-main
       - run: lein cljs-renderer
       - run: lein cljs-updater
