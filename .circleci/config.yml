@@ -12,8 +12,9 @@ jobs:
       - run: sudo apt-get install make
       - checkout
       - run: lein deps
-      - run: lein test
+      - run: lein test2junit
       - run: npm install
+      - run: npm install -g node-gyp
       - run: lein cljs-main
       - run: lein cljs-renderer
       - run: lein cljs-updater
