@@ -2,7 +2,7 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%-20.20thread] %-5level %25.25logger{25} - %msg%n</pattern>
+            <pattern>%msg%n</pattern>
         </encoder>
     </appender>
 
@@ -22,7 +22,7 @@
         </rollingPolicy>
         <immediateFlush>true</immediateFlush>
         <encoder>
-            <pattern>%d{dd-MM-yy HH:mm:ss.SSS} [%-20.20thread] %-5level %25.25logger{25} - %msg%n</pattern>
+            <pattern>%msg%n</pattern>
         </encoder>
     </appender>
 
@@ -34,7 +34,7 @@
         </rollingPolicy>
         <immediateFlush>true</immediateFlush>
         <encoder>
-            <pattern>%d{dd-MM-yy HH:mm:ss.SSS} [%-20.20thread] %-5level %25.25logger{25} %class - %msg%n</pattern>
+            <pattern>%msg%n</pattern>
         </encoder>
     </appender>
 
