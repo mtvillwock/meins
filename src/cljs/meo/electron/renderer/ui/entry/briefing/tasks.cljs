@@ -181,7 +181,7 @@
               (when show-points
                 [:th {:on-click #(swap! local assoc :show-points false)}
                  [:i.fa.far.fa-gem]])
-              [:th "idle for"]
+              [:th "task idle for"]
               [:th "time spent"]
               [:th
                [:div
@@ -248,7 +248,7 @@
             [:th.xs [:i.far.fa-exclamation-triangle]]
             (when show-points
               [:th [:i.fa.far.fa-gem]])
-            [:th "age"]
+            [:th "task age"]
             [:th "open tasks"
              [:i.fas.fa-search]
              [:input {:on-input on-change
@@ -320,7 +320,7 @@
             [:th.xs [:i.far.fa-exclamation-triangle]]
             (when show-points
               [:th [:i.fa.far.fa-gem]])
-            [:th "age"]
+            [:th "task age"]
             [:th "linked tasks"]
             [:th.xs [:i.fa.far.fa-link]]]
            (for [entry (sort task-sorter linked-tasks)]

@@ -34,7 +34,7 @@
 
 (def custom-log-appender
   {:enabled?  true
-   :async?    false
+   :async?    true
    :min-level nil
    :output-fn :inherit
    :fn        (fn [data]
