@@ -1,30 +1,29 @@
-# What is **meo** and how do I **use** it?
+# What is **meins** and how do I **use** it?
 
-
-The Clojure/Script application *meo* is an experimentation tool for designing your life. It helps you collect relevant information,  design, and then implement change. Most importantly, it does so without leaking data, because everything stays within your realm of control, and you can always verify this claim in the source code. You start by defining what you want to capture, e.g., how long you **sleep**, how many **steps** you take, how much **beer** you drink. Variables you have some influence on. Then you define **habits**, where a set of rules determines habit success (or failure). Then you record the data or have meo record it for you. A dashboard finally shows you where you **succeed** and where you **fail**. Your only job then is to keep everything **green**, for as long as you possibly can. **Don’t break the chain**, pretty much. Here’s my example of recent success and failure for some of the habits I defined for myself:
+The Clojure/Script application **meins** is an experimentation tool for **designing your life**. It helps you collect relevant information, design, and then implement change. Most importantly, it does so without leaking data, because everything stays within your realm of control, and you can always verify this claim in the **[source code](https://github.com/matthiasn/meins)**. You start by defining what you want to capture, e.g., how long you **sleep**, how many **steps** you take, how much **beer** you drink. Variables you have some influence on. Then you define **habits**, where a set of rules determines habit success (or failure). Then you record the data or have meins record it for you. A dashboard finally shows you where you **succeed** and where you **fail**. Your only job then is to keep everything **green**, for as long as you possibly can. **Don’t break the chain**, pretty much. Here’s my example of recent success and failure for some of the habits I defined for myself:
 
 ![screenshot](./images/20190107_1907_habits.png) 
 
 The dots are only fully saturated from the definition of the habit. For some sources, like steps, I have data far further back, imported on the mobile app. On others, I have nothing before the definition, so it does not make sense to show them in the same color, and imply long stretches of failure.
 
-The habits, together with text notes and photos, and time spent, are a part of the journal of your life. After all, you are in large part what you do, and you can capture that in meo, with a timer that you keep running while you're working on anything. 
+The habits, together with text notes and photos, and time spent, are a part of the journal of your life. After all, you are in large part what you do, and you can capture that in meins, with a timer that you keep running while you're working on anything. 
 
-Besides, I reserve say fifteen minutes a day for some text about how I am doing and how things are going. I created a habit to monitor that, see the second last line above. Maybe not surprisingly, compliance has gone up after I put this dashboard in plain view, and that’s my general experience. The habits work by far best when I’m forced to look at them, and meo happily shines daylight on the things I said I would do.
+Besides, I reserve say fifteen minutes a day for some text about how I am doing and how things are going. I created a habit to monitor that, see the second last line above. Maybe not surprisingly, compliance has gone up after I put this dashboard in plain view, and that’s my general experience. The habits work by far best when I’m forced to look at them, and meins happily shines daylight on the things I said I would do.
 
 ## Privacy of YOUR Data
 
-With **meo**, it is straightforward. **Your data stays with you**. Meo does **not share of any of your data with anyone**. I strongly believe that everybody should be able to gather data about their lives themselves – without having to **donate** said data to Silicon Valley, or anyone else.
+With **meins**, it is straightforward. **Your data stays with you**. Meins does **not share of any of your data with anyone**. I strongly believe that everybody should be able to gather data about their lives themselves – without having to **donate** said data to Silicon Valley, or anyone else.
 
-Meo might at some point give you a way to actively share data with others, but there will **not ever be any sharing of anything with anyone without your consent**, and only ever at your explicit command. That’s all. **No fine print, and you can verify all this in the [source code](https://github.com/matthiasn)**. You have no reason to trust anyone’s word when it comes to your private data.
+Meins might at some point give you a way to actively share data with others, but there will **not ever be any sharing of anything with anyone without your consent**, and only ever at your explicit command. That’s all. **No fine print, and you can verify all this in the [source code](https://github.com/matthiasn/meins)**. You have no reason to trust anyone’s word when it comes to your private data.
 
-Now, I also like to use meo in the presence of other people, even at work, and not everything I record in meo is compatible with that. For this purpose, there is the private mode, which hides the things you would not want to show. More about that later.
+Now, I also like to use meins in the presence of other people, even at work, and not everything I record in meins is compatible with that. For this purpose, there is the private mode, which hides everything you would not want to show. More about that later.
 
 ## High-level concepts
 Let’s look at the core concepts first, before looking into each of them in detail. The main view of the application currently looks like this:
 
 ![screenshot](./images/20181217_2250_overview.png) 
 
-On the far left, the **calendar view** shows recorded time. Most of the time is user-recorded, as in, starting a timer while completing a task, or recording something that already happened with the **#duration** tag. However, there is an integration with Apple Health. This allows the meo app to read this data, and import for example sleep duration and the number of steps and stairs per day, or also blood pressure and pulse. This mobile app is not quite ready for beta testing; please reach out though if you think you can help in one way or another. The are many different things to do, including helping me get this React Native application work on Android as well. 
+On the far left, the **calendar view** shows recorded time. Most of the time is user-recorded, as in, starting a timer while completing a task, or recording something that already happened with the **#duration** tag. However, there is an integration with Apple Health. This allows the meins app to read this data, and import for example sleep duration and the number of steps and stairs per day, or also blood pressure and pulse. This mobile app is not quite ready for beta testing; please reach out though if you think you can help in one way or another. The are many different things to do, including helping me get this React Native application work on Android as well. 
 
 The next column right shows an **infinitely scrolling calendar** where you can select the current day. Below that is a list of habits I committed to and that are still open for today. Each of them shows the success for the past 5 days including today and disappears once successfully completed for the day. 
 
@@ -44,7 +43,7 @@ Also, you can add a story to the search using `$` before starting to type a subs
 
 ![screenshot](./images/20181219_1046_search.png)
 
-In theory, you would also be able to do a full-text search, but that is currently broken, see [issue #17](https://github.com/matthiasn/meo/issues/17). Help is much appreciated.
+In theory, you would also be able to do a full-text search, but that is currently broken, see [issue #17](https://github.com/matthiasn/meins/issues/17). Help is much appreciated.
 
 Below briefing and entry timeline view, there is the **dashboard**. One way I think of it is a **banner ad for information about myself** that, insofar as if I choose the right information, it helps me improve something in my life. What information you choose is entirely up to you, and showing even seemingly random data source can be interesting, and useful to spot connections.
 
@@ -112,7 +111,7 @@ You start working on a task by clicking the timer button,which will start a new 
 ### Custom Field config
 Custom fields let you define what kind of data you want to **capture** when you are using a particular **hashtag**. You need to define this first if you want to plot charts with the data later. For defining custom fields, there is a special entry type. These entries define the custom fields for any particular hashtag. In most cases, you probably want a single field, such as when capturing the amount of coffee consumed, or the number of hours you slept. You can define custom fields in the preferences:
 
-- on Mac: **meo > preferences > Custom Fields**
+- on Mac: **meins > preferences > Custom Fields**
 - on Linux and Windows:  **application > preferences > Custom** 
 
 
@@ -132,7 +131,7 @@ Then, you can add fields, as described above. A more detailed description will c
 
 
 ### Habit
-A Habit defines a **set of rules** or **success criteria** that unambiguously let **meo** determine if you’ve either succeeded or failed in **achieving something you said you would do**. Sounds complicated​? ...here's an example from my own entries:
+A Habit defines a **set of rules** or **success criteria** that unambiguously let **meins** determine if you’ve either succeeded or failed in **achieving something you said you would do**. Sounds complicated​? ...here's an example from my own entries:
 
 - 10K **#steps** per day: if I manage to walk more than 10,000 steps per day, this habit is green, otherwise it is red
 - Morning exercises: all of 70 **#sit-ups**, 20 **#push-ups**, 30 **#lunges**, 70s **#plank** – or else it’s red
@@ -157,7 +156,7 @@ Above, you saw a dashboard with some of my habits. However, dashboards are more 
 
 Dashboards are defined in the preferences as well:
 
-- on Mac: **meo > preferences > Dashboards**
+- on Mac: **meins > preferences > Dashboards**
 - on Linux and Windows:  **application > preferences > Dashboard** 
 
 ![screenshot](./images/20181219_1304_pref_dashboards.png)
@@ -187,9 +186,7 @@ Also, the tabs in the two journal sections get grouped together by story.
 
 
 ### Private mode
-There is plenty of stuff in my journal that I would not freely share with colleagues, friends, or family. I do however need to be able to open meo when other people are around. Also, I need to be able to take screenshots, for example for this manual, without having to blur out anything.
+There is plenty of stuff in my journal that I would not freely share with colleagues, friends, or family. I do however need to be able to open meins when other people are around. Also, I need to be able to take screenshots, for example for this manual, without having to blur out anything.
 
 For this, there is the private mode. This ensures that once activating the little detective button at the top. Then, all the entities described above that do have a private mode switch will be hidden as desired and made safe for work, if you will.
-
-
 
