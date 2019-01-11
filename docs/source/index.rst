@@ -30,5 +30,4 @@ Besides, I reserve say fifteen minutes a day for some text about how I am doing 
 Indices and tables
 ==================
 
-* :ref:`genindex`
 * :ref:`search`
